@@ -4,7 +4,7 @@ import { MdArrowRightAlt, MdFavorite, MdFavoriteBorder } from "react-icons/md";
 import { collection, query, where, orderBy, limit, getDocs, doc, updateDoc } from 'firebase/firestore';
 import { db } from '../firebase';
 import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
 
 const Items = ({ title, section }) => {
     const navigate = useNavigate();
@@ -93,7 +93,7 @@ const Items = ({ title, section }) => {
                             <p className="mt-1 text-lg font-medium text-gray-900">₹ {product.price}</p>
                             <button
                                 onClick={(e) => {
-                                    e.stopPropagation(); 
+                                    e.stopPropagation(); // Prevents handleDetails from firing
                                     handleAddToWishlist(product.id);
                                 }}
                                 className="mt-2 flex items-center text-gray-600 hover:text-red-500"

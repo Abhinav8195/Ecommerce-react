@@ -74,7 +74,7 @@ const PaymentForm = () => {
       },
       prefill: {
         email: email,
-        contact: '<CUSTOMER_PHONE_NUMBER>',
+        contact: phone,
       },
       theme: {
         color: '#3399cc',

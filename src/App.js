@@ -20,6 +20,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PaymentForm from './pages/PaymentForm';
 import Return from './pages/Return';
+import Wishlist from './pages/Wishlist';
 
 
 function App() {
@@ -40,7 +41,8 @@ function App() {
           <Route path='/checkout' element={<ProtectedRoute><PaymentForm /></ProtectedRoute>} />
           <Route path='/editproduct/:id' element={<ProtectedRoute><UpdateProduct /></ProtectedRoute>} />
           <Route path='/return/:id' element={<ProtectedRoute><Return/></ProtectedRoute>} />
-          
+          <Route path='/wishlist' element={<ProtectedRoute><Wishlist /></ProtectedRoute>} />
+  
           <Route path='/adminDashboard' element={<AdminDashboard />} />
           <Route path='/addproducts' element={<AddProduct />} />
           

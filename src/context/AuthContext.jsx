@@ -46,16 +46,10 @@ function resetPassword(email){
 
 
 
-const provider = new GoogleAuthProvider();
-function signInWithGoogle() {
-  if (window.innerWidth <= 800) {
-    // Use signInWithRedirect on mobile
-    signInWithRedirect(auth, provider);
-  } else {
-    // Use signInWithPopup on desktop
-    signInWithPopup(auth, provider);
+  function signInWithGoogle() {
+    const provider = new GoogleAuthProvider();
+    return signInWithPopup(auth, provider);
   }
-}
 
 
 useEffect(() => {

@@ -117,6 +117,7 @@ const PaymentForm = () => {
   };
 
   return (
+    <>
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
         <div className="flex justify-between items-center mb-4">
@@ -193,6 +194,8 @@ const PaymentForm = () => {
         </div>
       </div>
     </div>
+      <ToastContainer/>
+    </>
   );
 };
 

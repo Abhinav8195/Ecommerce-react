@@ -1,5 +1,7 @@
 import React from 'react';
 import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ButNowPage = ({ open, handleClose, totalPrice }) => {
   const stripe = useStripe();
@@ -22,7 +24,15 @@ const ButNowPage = ({ open, handleClose, totalPrice }) => {
       console.error(error);
     } else {
       console.log('PaymentMethod', paymentMethod);
-      alert('Payment Successful!');
+      toast.success('Payment Successful!', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
       handleClose();
     }
   };
@@ -31,6 +41,7 @@ const ButNowPage = ({ open, handleClose, totalPrice }) => {
 
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
+      <ToastContainer />
       <div className="bg-white rounded-lg p-8 w-full max-w-md relative">
         <button
           className="absolute top-4 right-4 text-gray-600 hover:text-gray-800"

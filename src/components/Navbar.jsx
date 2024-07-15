@@ -40,7 +40,7 @@ const Navbar = () => {
                 <Link to={'/userDashboard'} className="text-white text-sm font-semibold mx-2">
                   {user?.displayName}
                 </Link>
-                <Link to={''} className="text-white text-lg font-semibold mx-2">
+                <Link to={'/wishlist'} className="text-white text-lg font-semibold mx-2">
                   Wishlist
                 </Link>
                 {user.email === 'abhianvbhatia143@gmail.com' && (
@@ -79,7 +79,7 @@ const Navbar = () => {
                 <Link to={'/userDashboard'} className="block py-2 text-white">
                   <span className="text-sm font-semibold">{user?.displayName}</span>
                 </Link>
-                <Link to={''} className="block py-2 text-white">
+                <Link to={'/wishlist'} className="block py-2 text-white">
                   Wishlist
                 </Link>
                 {user.email === 'abhianvbhatia143@gmail.com' && (

@@ -48,7 +48,11 @@ function resetPassword(email){
 
   function signInWithGoogle() {
     const provider = new GoogleAuthProvider();
-    return signInWithPopup(auth, provider);
+    if (window.innerWidth <= 800) {
+      return signInWithRedirect(auth, provider);
+    } else {
+      return signInWithPopup(auth, provider);
+    }
   }
 
 

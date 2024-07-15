@@ -46,10 +46,10 @@ function resetPassword(email){
 
 
 
-  function signInWithGoogle() {
-  const provider = new GoogleAuthProvider();
-  return signInWithPopup(auth, provider);
-}
+function signInWithGoogle() {
+    const provider = new GoogleAuthProvider();
+    return signInWithPopup(auth, provider);
+  }
 
 
 useEffect(() => {

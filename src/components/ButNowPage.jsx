@@ -39,9 +39,9 @@ const ButNowPage = ({ open, handleClose, totalPrice }) => {
 
   if (!open) return null;
 
-  return (
+  return (<>
     <div className="fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
-      <ToastContainer />
+      
       <div className="bg-white rounded-lg p-8 w-full max-w-md relative">
         <button
           className="absolute top-4 right-4 text-gray-600 hover:text-gray-800"
@@ -69,6 +69,8 @@ const ButNowPage = ({ open, handleClose, totalPrice }) => {
         </form>
       </div>
     </div>
+     <ToastContainer/>
+  </>
   );
 };
 

@@ -3,6 +3,7 @@ import { UserAuth } from "../context/AuthContext";
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../firebase';
 import { Link } from "react-router-dom";
+import { format, parseISO, isValid } from 'date-fns';
 
 const UserD = () => {
     const { user } = UserAuth();
@@ -33,6 +34,13 @@ const UserD = () => {
         fetchOrders();
     }, []);
 
+    const formatDate = (dateString) => {
+        if (dateString && isValid(parseISO(dateString))) {
+            return format(parseISO(dateString), 'dd MMMM, yyyy');
+        }
+        return 'Invalid date';
+    };
+
     return (
         <>
             <div className="container mx-auto px-4 py-5 lg:py-8">
@@ -60,7 +68,7 @@ const UserD = () => {
                                         </div>
                                         <div className="mb-4">
                                             <div className="text-sm font-semibold">Date</div>
-                                            <div className="text-sm font-medium text-gray-900">4 March, 2023</div>
+                                            <div className="text-sm font-medium text-gray-900">{formatDate(order.createdAt)}</div>
                                         </div>
                                         <div className="mb-4">
                                             <div className="text-sm font-semibold">Total Amount</div>

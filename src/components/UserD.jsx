@@ -26,7 +26,7 @@ const UserD = () => {
                 });
 
                 setProducts(updatedOrderList);
-                console.log(updatedOrderList);
+                
             } catch (error) {
                 console.error('Error fetching products:', error);
             }
